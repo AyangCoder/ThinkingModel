@@ -9,9 +9,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeModalBtn = document.getElementById('close-modal');
     const modal = document.getElementById('model-detail-modal');
 
-    // Generate category buttons dynamically
+    // Calculate model count and category count
+    const modelCount = mentalModels.length;
     const categories = new Set(['全部']);
     mentalModels.forEach(model => categories.add(model.category));
+    const categoryCount = categories.size - 1; // Subtract 1 to exclude '全部'
+
+    // Update model and category count display
+    const modelCountSpan = document.querySelector('.flex.items-center.space-x-2 span:first-child');
+    const categoryCountSpan = document.querySelector('.flex.items-center.space-x-2 span:last-child');
+    if (modelCountSpan) modelCountSpan.textContent = `${modelCount} 个模型`;
+    if (categoryCountSpan) categoryCountSpan.textContent = `${categoryCount} 个分类`;
     
     // Clear existing category buttons
     categoriesContainer.innerHTML = '';
