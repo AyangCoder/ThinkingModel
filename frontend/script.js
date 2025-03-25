@@ -5,9 +5,27 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get DOM elements
     const modelsContainer = document.getElementById('models-container');
     const searchInput = document.getElementById('search-input');
-    const categoryButtons = document.querySelectorAll('.category-btn');
+    const categoriesContainer = document.querySelector('.flex.flex-wrap.gap-2');
     const closeModalBtn = document.getElementById('close-modal');
     const modal = document.getElementById('model-detail-modal');
+
+    // Generate category buttons dynamically
+    const categories = new Set(['全部']);
+    mentalModels.forEach(model => categories.add(model.category));
+    
+    // Clear existing category buttons
+    categoriesContainer.innerHTML = '';
+    
+    // Create category buttons
+    categories.forEach(category => {
+        const button = document.createElement('button');
+        button.className = `category-btn px-3 py-1.5 rounded-md ${category === '全部' ? 'bg-gray-900 text-white active' : 'bg-gray-100 hover:bg-gray-200 transition-colors'} text-sm font-medium`;
+        button.textContent = category;
+        categoriesContainer.appendChild(button);
+    });
+    
+    // Get the dynamically created category buttons
+    const categoryButtons = document.querySelectorAll('.category-btn');
     
     // Initialize card flipper
     const cardFlipper = new CardFlipper(modelsContainer, mentalModels);
