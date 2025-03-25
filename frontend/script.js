@@ -27,9 +27,17 @@ document.addEventListener('DOMContentLoaded', function() {
     categoryButtons.forEach(button => {
         button.addEventListener('click', () => {
             // Update active button state
-            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            categoryButtons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.remove('bg-gray-900');
+                btn.classList.remove('text-white');
+                btn.classList.add('bg-gray-100');
+            });
             button.classList.add('active');
-            
+            button.classList.add('bg-gray-900');
+            button.classList.add('text-white');
+            button.classList.remove('bg-gray-100');
+
             // Filter cards
             const category = button.textContent;
             cardFlipper.filterByCategory(category);
