@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>查理·芒格思维模型认知卡片（100个）</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/lucide-static@0.483.0/font/lucide.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.483.0/dist/umd/lucide.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50 text-gray-900 min-h-screen flex flex-col">
+    <!-- Prevent zooming -->
+    <script>
+        window.addEventListener("wheel", (e)=> {
+            const isPinching = e.ctrlKey
+            if(isPinching) e.preventDefault()
+        }, { passive: false })
+    </script>
+
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+                        <rect width="32" height="32" rx="6" fill="#111827"/>
+                        <path d="M11 16C11 12.6863 13.6863 10 17 10V22C13.6863 22 11 19.3137 11 16Z" fill="white"/>
+                        <path d="M17 10C20.3137 10 23 12.6863 23 16C23 19.3137 20.3137 22 17 22" stroke="white" stroke-width="1.5"/>
+                    </svg>
+                </div>
+                <h1 class="text-lg font-medium tracking-tight">查理·芒格思维模型认知卡片（100个）</h1>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <input type="text" id="search-input" placeholder="搜索思维模型..." class="w-60 px-3 py-1.5 rounded-md border border-gray-200 focus:outline-none focus:ring-1 focus:ring-gray-800 focus:border-transparent bg-gray-50 text-sm">
+                    <span class="absolute right-3 top-1.5 text-gray-400">
+                        <i data-lucide="search" class="w-4 h-4"></i>
+                    </span>
+                </div>
+                <button id="favorites-btn" class="flex items-center space-x-1 px-2 py-1.5 rounded-md hover:bg-gray-100 transition-colors text-sm">
+                    <i data-lucide="bookmark" class="w-4 h-4"></i>
+                    <span>收藏</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-4 py-6">
+        <!-- Categories -->
+        <div class="mb-6">
+            <h2 class="text-sm font-medium mb-3 text-gray-500">模型分类</h2>
+            <div class="flex flex-wrap gap-2">
+                <button class="category-btn active px-3 py-1.5 rounded-md bg-gray-900 text-white text-sm font-medium">全部</button>
+                <button class="category-btn px-3 py-1.5 rounded-md bg-gray-100 hover:bg-gray-200 transition-colors text-sm">心理学</button>
+                <button class="category-btn px-3 py-1.5 rounded-md bg-gray-100 hover:bg-gray-200 transition-colors text-sm">数学与统计学</button>
+                <button class="category-btn px-3 py-1.5 rounded-md bg-gray-100 hover:bg-gray-200 transition-colors text-sm">物理学与工程学</button>
+                <button class="category-btn px-3 py-1.5 rounded-md bg-gray-100 hover:bg-gray-200 transition-colors text-sm">经济学</button>
+                <button class="category-btn px-3 py-1.5 rounded-md bg-gray-100 hover:bg-gray-200 transition-colors text-sm">系统思维</button>
+                <button class="category-btn px-3 py-1.5 rounded-md bg-gray-100 hover:bg-gray-200 transition-colors text-sm">决策科学</button>
+            </div>
+        </div>
+
+        <!-- Introduction -->
+        <div class="bg-white border border-gray-200 rounded-lg p-5 mb-6">
+            <div class="flex items-start space-x-4">
+                <div class="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+                        <rect width="48" height="48" rx="24" fill="#f8fafc"/>
+                        <path d="M24 14C17.3726 14 12 19.3726 12 26C12 32.6274 17.3726 38 24 38C30.6274 38 36 32.6274 36 26C36 19.3726 30.6274 14 24 14Z" stroke="#64748b" stroke-width="2"/>
+                        <circle cx="24" cy="22" r="4" fill="#64748b"/>
+                        <path d="M32 32C32 27.5817 28.4183 24 24 24C19.5817 24 16 27.5817 16 32" stroke="#64748b" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="flex-grow">
+                    <h2 class="text-lg font-semibold mb-2">查理·芒格思维模型</h2>
+                    <p class="text-gray-600 text-sm mb-3">查理·芒格（Charlie Munger）是伯克希尔·哈撒韦公司的副主席，沃伦·巴菲特的长期商业伙伴。他推崇"跨学科思维"，倡导建立思维模型的"格栅"，通过多个学科的视角来解决问题。以下是芒格提倡的100个思维模型，涵盖了心理学、数学、物理学、经济学等多个领域。</p>
+                    <div class="flex items-center space-x-2">
+                        <span class="inline-block px-2 py-1 rounded-md bg-gray-100 text-xs font-medium">100 个模型</span>
+                        <span class="inline-block px-2 py-1 rounded-md bg-gray-100 text-xs font-medium">6 个分类</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mental Models Grid -->
+        <div class="mb-6">
+            <h2 class="text-sm font-medium mb-3 text-gray-500">思维模型卡片</h2>
+            <div id="models-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Cards will be inserted here by JavaScript -->
+                <div class="skeleton-card bg-white border border-gray-200 rounded-lg p-4 h-[180px]"></div>
+                <div class="skeleton-card bg-white border border-gray-200 rounded-lg p-4 h-[180px]"></div>
+                <div class="skeleton-card bg-white border border-gray-200 rounded-lg p-4 h-[180px]"></div>
+                <div class="skeleton-card bg-white border border-gray-200 rounded-lg p-4 h-[180px]"></div>
+                <div class="skeleton-card bg-white border border-gray-200 rounded-lg p-4 h-[180px]"></div>
+                <div class="skeleton-card bg-white border border-gray-200 rounded-lg p-4 h-[180px]"></div>
+                <div class="skeleton-card bg-white border border-gray-200 rounded-lg p-4 h-[180px]"></div>
+                <div class="skeleton-card bg-white border border-gray-200 rounded-lg p-4 h-[180px]"></div>
+            </div>
+        </div>
+
+        <!-- Modal for Model Details -->
+        <div id="model-detail-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+            <div class="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto p-5 m-4">
+                <div class="flex justify-between items-start mb-4">
+                    <h2 id="modal-title" class="text-xl font-semibold">模型标题</h2>
+                    <button id="close-modal" class="text-gray-500 hover:text-gray-700">
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <h3 class="text-sm font-medium text-gray-500 mb-1">定义</h3>
+                        <p id="modal-definition" class="text-gray-900">模型定义内容...</p>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-medium text-gray-500 mb-1">核心原理</h3>
+                        <p id="modal-principle" class="text-gray-900">核心原理内容...</p>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-medium text-gray-500 mb-1">适用场景</h3>
+                        <p id="modal-application" class="text-gray-900">适用场景内容...</p>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-medium text-gray-500 mb-1">实际案例</h3>
+                        <p id="modal-example" class="text-gray-900">实际案例内容...</p>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-medium text-gray-500 mb-1">芒格原话</h3>
+                        <blockquote id="modal-quote" class="pl-3 border-l-2 border-gray-300 italic text-gray-600">
+                            芒格原话内容...
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="mt-5 pt-4 border-t border-gray-200 flex justify-between items-center">
+                    <div class="text-sm text-gray-500">
+                        <span id="modal-category" class="inline-block px-2 py-1 rounded-md bg-gray-100 text-xs font-medium">分类</span>
+                    </div>
+                    <button id="modal-favorite" class="flex items-center space-x-1 text-gray-500 hover:text-gray-900 text-sm px-2 py-1 rounded-md hover:bg-gray-100">
+                        <i data-lucide="bookmark" class="w-4 h-4"></i>
+                        <span>收藏</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-4">
+        <div class="container mx-auto px-4 text-center text-gray-500 text-xs">
+            <p>Built with <a href="#" class="text-gray-700 hover:underline">Ayang</a>.</p>
+        </div>
+    </footer>
+
+    <script src="frontend/utils/data.js"></script>
+    <script src="frontend/components/card-flipper/index.js"></script>
+    <script src="frontend/services/search.js"></script>
+    <script src="frontend/services/favorites.js"></script>
+    <script src="frontend/script.js"></script>
+</body>
+</html>
